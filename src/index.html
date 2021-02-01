@@ -2,12 +2,113 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Sofolio</title>
+  <title>Sofolio - a portfolio webapp project by Sohail Selky</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <app-root></app-root>
+  <div class="container">
+    <header>
+		<ul class="navbar">
+			<li class="link"><a class="link2" href="news.asp">News</a></li>
+			<li class="link"><a class="link2" href="contact.asp">Contact</a></li>
+			<li class="link"><a class="link2" href="about.asp">About</a></li>
+			<li class="letterhead"><a href="#" id="letterhead-link">Sofolio</a></li>
+		</ul>
+    </header>
+  
+    <nav>
+      <!-- probably leaving blank -->
+    </nav>
+  
+    <main>
+
+		<div class="bubble t1">
+			<h3>Featured Project -</h3>
+			<h1>Trivia Knights</h1>
+			<span class="post">Posted by Sohail on 1-28-2021 - 5:29pm</span>
+			
+			<div class="bubbletext">
+				<a href="https://klingons-triviaknights.netlify.app"><img src="./assets/tk2.png"></a>
+				<h3>Project description</h3>
+				<p>This project was made in Software Engineering course. Myself and four other students were grouped together to simulate an agile work environment with 3 week sprints. Our objective was simply to create an app.</p>
+				<p>As a group we decided to create a web app using REACT and Django. The premise was a trivia application that people could play with their friends, kind of like trivia night at local bars. Initially we planned to do like a multiplayer hosted session sort of thing but React proved to be more challenging than we anticipated.</p>
+				<p>We were succesful in standing up the web app however. You can see the final project results <a href="https://klingons-triviaknights.netlify.app">here</a>. The app allows a user to create a profile and will generate a list of trivia questions based on the user's initial parameters.</p>
+				<p>Most of my work went into the game design and UX. I'm quite proud of how it turned out, despite..</p>
+				<a href="#">&ltcontinue reading></a>
+			</div>
+		</div>
+
+		<div class="bubble t2">
+			<h2>This site is being transitioned to an Angular based webapp</h2>
+			<span class="post">Posted by Sohail on 1-30-2021 - 1:30pm</span>
+			<p>The current and ongoing project until completion is to turn this website into webapp using Firebase and Angular. Features that I am trying to implement:</p>
+			<ul>
+				<li>User logins</li>
+				<li>Profiles with past projects listed</li>
+				<li>The ability to post new content through a webform</li>
+				<li>A dynamic front page that loads the most recent and relevant projects</li>
+			</ul>
+			<span>Currently what you are seeing is a prototype of the end goal. Thanks for stopping by!</span>
+		</div>
+		<a href="www.google.com">
+		<div class="bubble t1">
+			<h3>Featured Project -</h3>
+			<h1>MSPI 1-Byte Minecraft Processor</h1>
+			<span class="post">Posted by Sohail on 1-30-2021 - 1:58pm</span>
+			<div class="bubbletext">
+				<a href="https://youtu.be/SobCXfsHwbo"><img src="./assets/mspi2.png" alt=""></a>
+				<h3>Summary</h3>
+				<p>This was a project for Computer Architecture. I designed my own 1 byte processor architecture
+					and implemented it in Minecraft. The premise was that learning the cycles of a processor might be
+					less abstract if a student could watch the cycles take place and interact with it.
+				</p>
+				<p>The project was a success in that I was actually able to program a short script in redstone
+					and the my professor (Dr.Apan Qasem) offered me the opportunity to develop the idea. You can see the
+					result of that work <a href="https://youtu.be/SobCXfsHwbo">here</a>. I also did a breakdown of the elements, which you can see <a href="https://youtu.be/FSZAUTlHAMk">here</a>. Ultimately, the limitations
+					of the minecraft lighting engine made the game quite laggy, so introducing more complexity did not seem feasible
+					at the time.
+				</p>
+				<p>
+					Since then, Minecraft has released a new version of Minecraft that doesn't use Java RTE, and is thus
+					somewhat faster at render times. The MSPI map file is completely incompatable, however, and several of
+					the redstone mechanisms no longer work after updates to how redstone works. I'm not sure I'll ever be able
+					to pick this one up again but it was a fun an interesting project for sure.
+				</p>
+				<a href="#">&ltcontinue reading></a>
+			</div>
+		</div>
+		</a>
+
+		<div class="flex-container">
+			<div class="card bubble t1">
+				<h3>Other projects - </h3>
+				<h2>Asteroids</h2>
+				<img class="thumb" src="./assets/asteroids.png">
+			</div>
+			<div class="card bubble t1">
+				<h2> Other clickable crap</h2>
+				<p>Paragraph with text. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+					ut labore et dolore magna aliqua.</p>
+			</div>
+			<div class="bubble t1 card">
+				<h2> More Crap to Click On</h2>
+				<p>Paragraph with text. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+					ut labore et dolore magna aliqua.</p>
+			</div>
+		</div>
+
+    </main>
+  
+    <aside>
+      <!-- Sidebar / Ads - probably leaving blank -->
+    </aside>
+  
+    <footer>
+		<!-- Footer content -->
+		Copyright © 2021 Sohail Selky
+    </footer>
+  </div>
 </body>
 </html>

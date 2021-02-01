@@ -1,1 +1,211 @@
-/* You can add global styles to this file, and also import other style files */
+/* Layout borrowed from: https://www.digitalocean.com/community/tutorials/css-css-grid-holy-grail-layout */
+
+/* This code collapses the sidebars for mobile devices */
+@media (max-width: 768px) {
+  .container {
+    grid-template-areas:
+      "header"
+      "nav"
+      "content"
+      "side"
+      "footer";
+
+    grid-template-columns: 1fr;
+    grid-template-rows:
+      auto /* Header */
+      minmax(75px, auto) /* Nav */
+      1fr /* Content */
+      minmax(75px, auto) /* Sidebar */
+      auto; /* Footer */
+  }
+
+  nav, aside {
+    margin: 0;
+  }
+}
+
+* {
+	font-family: helvetica;
+	color: #F7E3AF;
+}
+span.post{
+	color: #888;
+	font-style: italic;
+	font-size: small;
+}
+p{
+	text-indent: 30px;
+	color: #F7E3AF;
+}
+body {
+	background-color: #111;
+}
+h1, h2, h3 {
+	color: #B2D1E7;
+	margin: 0px;
+}
+
+/*---------------------    Holy Grail    ---------------------*/
+.container {
+	display: grid;
+
+	grid-template-areas:
+	"header header header"
+	"nav content side"
+	"footer footer footer";
+
+	grid-template-columns: auto 800px auto;
+	grid-template-rows: auto 1fr auto;
+	grid-gap: 0;
+
+	height: 100vh;
+}
+header {
+	grid-area: header;
+	background-color: rgb(9, 58, 43);
+}
+nav {
+	grid-area: nav;
+	/*   margin-left: 0.25rem; */
+	background-color: rgb(19, 19, 19);
+}
+main {
+	grid-area: content;
+	background-color: rgb(19, 19, 19);
+}
+
+aside {
+	grid-area: side;
+	/*   margin-right: 0.25rem; */
+	background-color: rgb(19, 19, 19);
+}
+
+footer {
+	grid-area: footer;
+	background-color: #398078;
+}
+
+/*---------------------    Content Settings    ---------------------*/
+a:link {
+  color: #F8AAA0;
+  text-decoration: none;
+  font-weight: normal;
+  font-style: normal;
+}
+a:visited{
+  color: #F88585;
+/*    text-decoration: none; */
+  font-weight: normal;
+  font-style: italic;
+}
+
+img {
+	padding-top: 10px;
+	width: 350px;
+}
+
+img.thumb {
+	padding-top: 10px;
+	width:215px;
+}
+
+/*---------------------    Nav Bar (top)    ---------------------*/
+.navbar{
+  list-style-type: none;
+  min-width: 400px;
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  overflow: hidden;
+  background-color: #398078;
+}
+.letterhead{
+  float: left;
+}
+#letterhead-link{
+	display: block;
+	color: #F7E3AF;
+	font-size: 30px;
+	font-weight: bolder;
+	background-color: #398078;
+	padding: 5px;
+	margin-left: 15px;
+}
+
+.navbar .link{
+	float: right;
+}
+.navbar .link2{
+	display: block;
+	color: #F7E3AF;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+.navbar a:hover{
+  background-color: #275652;
+}
+
+/*---------------------    bubbles    ---------------------*/
+div.bubble{
+	max-width: 800px;
+	margin: auto;
+	margin-top: 25px;
+	margin-right: 15px;
+	background-color: #1D1F22;
+	margin-bottom: 10px;
+	padding: 15px;
+	box-shadow: 10px 7px 5px rgba(0, 0, 0, .8);
+}
+.bubble h2, .bubble h1{
+	column-span: all;
+}
+
+.bubble h3 {
+	display:inline;
+}
+
+div.bubbletext {
+	margin: 5px;
+	column-count: 2;
+}
+
+div.bubble.t1{
+	border: 3px solid #398078;
+	border-radius: 10px;
+}
+div.bubble.t2{
+	border: 2px solid #DC965A;
+	border-radius: 10px;
+}
+.flex-container {
+	display: flex;
+	max-width: 800px;
+	margin:auto;
+	position: relative;
+	min-width: 800px;
+}
+
+.flex-child {
+	flex: 1;
+	margin-left: 20px;
+	margin-right: 10px;
+}
+.flex-child img {
+	height: 250px;
+	width: 100;
+	border-radius: 15px;
+	margin-top:15px;
+}
+.flex-child p {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.card {
+/*   margin-left: 0px;
+  margin-right: 15px; */
+  padding: 15px;
+  margin: auto;
+  width: 27%;
+}
