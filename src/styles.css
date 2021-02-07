@@ -109,6 +109,13 @@ img.thumb {
 	width:215px;
 }
 
+.error {
+	color:#a74040;
+}
+.hint {
+	color:#747474;
+}
+
 /*---------------------    Nav Bar (top)    ---------------------*/
 .navbar{
   list-style-type: none;

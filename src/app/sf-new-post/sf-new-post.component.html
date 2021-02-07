@@ -1,0 +1,39 @@
+<div class="bubble t2">
+    <h3>Create</h3>
+    <h1>New Post</h1>
+    <br>
+    <div>
+        <form
+            [formGroup]="form"
+            (ngSubmit)="onSubmit(form.value)"
+        >
+            <label for="type">Type of post:</label>
+            <br>
+            
+            <select name="type" id="type" formControlName="type">
+                <option value="Project">Project</option>
+                <option value="News">News</option>
+            </select>
+            <br>
+            <br>
+
+            <label for="title" >Title:</label>
+            <br>
+            <input type="text" name="title" id="title" cols="100" formControlName="title">
+            <br>
+            <div *ngIf="form.hasError('title', 'pattern')" class='error'>
+                Title has invalid characters
+            </div>
+            <br>
+
+            <label for="content">Post Content:</label>
+            <br>
+            <textarea name="content" id="content" cols="100" rows="10" formControlName="content"></textarea>
+            <br>
+            <button type="submit" [disabled]="!form.valid">Submit</button>
+            <div *ngIf="!form.valid" class='hint'>
+                Title and Content are both required
+            </div>
+        </form>
+    </div>   
+</div>
