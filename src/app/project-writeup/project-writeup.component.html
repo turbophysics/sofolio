@@ -1,1 +1,12 @@
-<p>project-writeup works!</p>
+<div class="bubble t1">
+	<h3>Featured Project -</h3>
+	<h1>{{ post?.title }}</h1>
+	<span class="post">Posted by {{ post?.author }} on {{ post?.date }}</span>
+	<br>
+	<a href="{{ post?.imageLink }}">
+		<img class="main" src="{{ post!.image[0] }}"> 
+	</a>
+	<br>
+	<h3>{{ post?.bodyTag }}</h3>
+	<div innerHTML="{{ post?.body }}"></div>
+</div>

@@ -26,7 +26,7 @@
 
 * {
 	font-family: helvetica;
-	color: #F7E3AF;
+	color: #c4c4c4;
 }
 span.post{
 	color: #888;
@@ -35,13 +35,13 @@ span.post{
 }
 p{
 	text-indent: 30px;
-	color: #F7E3AF;
+	color: #c4c4c4;
 }
 body {
 	background-color: #111;
 }
 h1, h2, h3 {
-	color: #B2D1E7;
+	color: #96beda;
 	margin: 0px;
 }
 
@@ -87,13 +87,13 @@ footer {
 
 /*---------------------    Content Settings    ---------------------*/
 a:link {
-  color: #F8AAA0;
+  color: #f5b8b0;
   text-decoration: none;
   font-weight: normal;
   font-style: normal;
 }
 a:visited{
-  color: #F88585;
+  color: #f19d9d;
 /*    text-decoration: none; */
   font-weight: normal;
   font-style: italic;

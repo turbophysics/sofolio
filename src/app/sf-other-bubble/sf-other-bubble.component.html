@@ -1,0 +1,11 @@
+
+		<h3>Other projects - </h3>
+		<a [routerLink]="['/post', post?.id]"><h2>{{ post?.title }}</h2></a>
+		<a href="{{ post?.imageLink }}">
+			<img class="thumb" src="{{ post?.image }}">
+		</a>
+		<br>
+
+		<br>
+		<a [routerLink] = "['/post', post?.id]">{{ readmore }}</a>
+

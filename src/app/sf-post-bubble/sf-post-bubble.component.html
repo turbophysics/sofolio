@@ -1,0 +1,12 @@
+<div class="bubble t1">
+	<i><h3>Featured Project -</h3></i>
+	<a [routerLink]="['/post', post.id]"><h1>{{ post.title }}</h1></a>
+	<span class="post">Posted by {{ post.author }} on {{ post.date }}</span>
+
+	<div class="bubbletext">
+		<a href="{{ post.imageLink }}"><img src="{{ post.image[0] }}"></a>
+		<h3>{{ post.bodyTag }}</h3>
+		<div innerHTML="{{ post.body | summary }}"></div>
+		<a [routerLink]="['/post', post.id]">{{ continue }}</a>
+	</div>
+</div>

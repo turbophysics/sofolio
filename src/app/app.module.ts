@@ -10,6 +10,14 @@ import { ContactComponent } from './contact/contact.component';
 import { SfNewsComponent } from './sf-news/sf-news.component';
 import { SfMainComponent } from './sf-main/sf-main.component';
 import { SfNewPostComponent } from './sf-new-post/sf-new-post.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { RouterModule } from '@angular/router';
+import { SfPostService } from './common/sf-post.service';
+import { SfPostBubbleComponent } from './sf-post-bubble/sf-post-bubble.component';
+import { SfNewsBubbleComponent } from './sf-news-bubble/sf-news-bubble.component';
+import { SfNotFoundComponent } from './sf-not-found/sf-not-found.component';
+import { SummaryPipe } from './common/summary.pipe';
+import { SfOtherBubbleComponent } from './sf-other-bubble/sf-other-bubble.component'
 
 @NgModule({
   declarations: [
@@ -20,14 +28,30 @@ import { SfNewPostComponent } from './sf-new-post/sf-new-post.component';
     ContactComponent,
     SfNewsComponent,
     SfMainComponent,
-    SfNewPostComponent
+    SfNewPostComponent,
+    NavbarComponent,
+    SfPostBubbleComponent,
+    SfNewsBubbleComponent,
+    SummaryPipe,
+    SfOtherBubbleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+	ReactiveFormsModule,
+	RouterModule.forRoot([
+		{ path: '', component: SfMainComponent},
+		{ path: 'about', component: AboutComponent},
+		{ path: 'news', component: SfNewsComponent},
+		{ path: 'contact', component: ContactComponent},
+		{ path: 'post/:id', component: ProjectWriteupComponent},
+		{ path: '**', component: SfNotFoundComponent},
+	], { scrollPositionRestoration: 'enabled' })
+	
   ],
-  providers: [],
+	providers: [
+	  SfPostService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

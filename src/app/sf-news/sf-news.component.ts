@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PostObject, SfPostService } from '../common/sf-post.service';
 
 @Component({
   selector: 'app-sf-news',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sf-news.component.css']
 })
 export class SfNewsComponent implements OnInit {
+	news: PostObject[] | null = null;
 
-  constructor() { }
+	constructor(private service: SfPostService) { }
 
-  ngOnInit(): void {
+	ngOnInit(): void {
+		this.news = this.service.getNews();
   }
 
 }
