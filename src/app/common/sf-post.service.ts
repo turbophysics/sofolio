@@ -14,7 +14,7 @@ export interface PostObject {
 }
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class SfPostService {
 
@@ -27,20 +27,21 @@ export class SfPostService {
 		{ id: 3, title: 'Game of Life', author: 'Sohail', date: '6-7-2021 - 5:29pm', bodyTag: "Old School", body: `<p>This is a C++ implementation of <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Conway's Game of Life</a> that I did in my foundations class with Dr. Oleg Komogortsev.</p><h3>What I Learned</h3><p> This was an difficult assignment because we were not given an example of what the finished project should look like, and the assignment write up was kind of difficult to interpret. I had never seen Conway's Game of Life before so I was very much coding in the dark. </p><p> In the end, this was an excellent exercise in algorithms, as each iteration had to check every cell in the map and determine what the next iterations outcome would be. </p><h3>What I Would Do Differently</h3><p> When I made this project, I tried and succeeded in making a version that animated the game of life so that you could see it play out in real time. This version, that is, the version I turned in, met the specifications of the assignment and simply returned the result of 100 iterations. This was a kind of hard lesson in keeping track of my experiments. Somehow I lost that version of the project and now it's impossible to slake my nostalgia for that animated version. </p><h3>Links</h3><ul><li><a href='https://github.com/turbophysics/project-examples/tree/master/life'>See the code on Github</li></ul>`, type: 1, image: ['assets/gol.png'], imageLink: 'https://github.com/turbophysics/project-examples/tree/master/life' },
 		{ id: 4, title: 'Asteroids', author: 'Sohail', date: '6-7-2021 - 5:29pm', bodyTag: "Playing with the Classics", body: `<p>For the longest time now I've really wanted to make a twin stick shooter multiplayer customizable battleship asteroids type game. It's the sort of game I'd probably not be very good at myself but I would still really like to bring the idea to life. This project was an attempt to learn a bit about javascript functions and libraries while having fun. I didn't spend a whole lot of time on it and I'm pretty sure all the code is in a single file, but it was a fun project to play around with while learning.</p><h3>What I Learned</h3><p>Firstly, javascript is way more functional than I had previously thought. I really didn't think something like this was even possible in a browser, but with a few added libraries and the draw() function, I had made something that wasn't too far from a working game.</p><p>Second thing I learned was how <i>not</i> to approach projects like this. I kind of went into this project guns blazin', just firing from the hip and not even trying to avoid spaghetti. It wasn't long before the code became completely unmanageable. As much as I'd like to keep tinkering with this little number, I don't relish the prospect of trying to dig through my own code.</p><h3>What I Would Do Differently</h3><p>I think this project was an important lesson in the importance of planning ahead. I'm usually a hands-on sort of person, so spending a bunch of time figuring out how I'm going to distribute code and work with features and libraries isn't something intuitive to me, but after this project I think I definitely have a better understanding of why all that stuff is essential.</p><h3>Links</h3><ul><li><a href='https://turbophysics.github.io/asteroids.html'>Play the demo</a></li><li><a href='https://github.com/turbophysics/turbophysics.github.io/blob/master/asteroids.html'>See the code on Github</li></ul>`, type: 1, image: ['assets/asteroids.png'], imageLink: 'https://turbophysics.github.io/asteroids.html' },
 	];
-	
+
 	news: PostObject[] = [
 		{ id: 1, title: 'This site is being transitioned to an Angular based webapp', author: 'Sohail', date: '5-30-2021 - 12:14pm', bodyTag: '', body: "<p>The current and ongoing project until completion is to turn this website into webapp using Firebase and Angular. Features that I am trying to implement:</p> <ul> <li>User logins</li> <li>Profiles with past projects listed</li> <li>The ability to post new content through a webform</li> <li>A dynamic front page that loads the most recent and relevant projects</li> </ul> <span>Currently what you are seeing is a prototype of the end goal. Thanks for stopping by!</span>", type: 2, image: [''], imageLink: '' },
 		{ id: 0, title: 'Sofolio web app has been launched!', author: 'Sohail', date: '1-30-2021 - 12:14pm', bodyTag: '', body: "<p>The very first version of this website was deployed to Firebase! It's not quite ready for many of the features I have planned, but this prototype will serve as the base until I'm able to make the functionality more robust.</p>", type: 2, image: [''], imageLink: '' },
 	];
-	
-	getAll() {
+
+	getAll(): PostObject[] {
 		return this.posts;
 	}
 
-	getPostByID(id: number) {
-		let result = this.posts.filter(post => post.id === id);
-		if (result.length === 0)
-			this.router.navigate(['**'])
+	getPostByID(id: number): PostObject{
+		const result = this.posts.filter(post => post.id === id);
+		if (result.length === 0){
+			this.router.navigate(['**']);
+		}
 		return result[0];
 	}
 
